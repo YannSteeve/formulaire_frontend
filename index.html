@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire des Apprenants</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsivity.css">
+    <script src="./Script.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <form class="form-background" id="formApprenant" action="https://formulaire-backend.onrender.com" method="POST" onsubmit="return validateForm()">
+            <h1>Informations sur les Apprenants</h1>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br>
+    
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required><br>
+
+            <label for="quartier">Quartier :</label>
+            <input type="text" id="quartier" name="quartier" required><br>
+
+            <label for="numeros">Numéros :</label>
+            <input type="tel" id="numeros" name="numeros" required placeholder="+241">
+            
+    
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="sex">Sex :</label>
+            <select name="sex" id="sex" required>
+                <option value="">Choisissez votre sex</option>
+                <option value="Masculin">Masculin</option>
+                <option value="Masculin">Féminin</option>
+            </select>
+    
+            <label for="referentiel">Référentiel :</label>
+            <select name="referentiel" id="referentiel" required>
+                <option value="">Choisissez un référentiel</option>
+                <option value="DEV">DEV</option>
+                <option value="REF">REF</option>
+            </select>
+    
+            <input type="submit" value="Soumettre">
+        </form>
+    </div>
+</body>
+</html>
