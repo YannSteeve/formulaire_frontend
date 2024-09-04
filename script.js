@@ -1,3 +1,4 @@
+// Fonction pour valider les données du formulaire
 function validateForm() {
     const nom = document.getElementById('nom').value;
     const prenom = document.getElementById('prenom').value;
@@ -30,4 +31,18 @@ function validateForm() {
     // Si toutes les validations passent
     alert("Formulaire soumis avec succès !");
     return true;
+}
+
+// Fonction pour soumettre le formulaire
+async function submitForm(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(document.getElementById('formApprenant'));
+    const response = await fetch('https://formulaire-backend.onrender.com/informations', {
+        method: 'POST',
+        body: formData
+    });
+
+    const result = await response.text();
+    alert(result); // Affiche le message de retour du serveur
 }
